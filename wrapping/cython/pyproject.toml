@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "cython"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wrapping.cython_ex"
+authors = [
+    {name = "Aurélien Besnier"},
+]
+description = "python wrapping"
+requires-python = ">=3.9"
+keywords = ["c++", "python", "wrapping"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+version = "0.1.0"
+dependencies = ["pytest", "pytest-benchmark"]
+
+[project.urls]
+Homepage = "https://github.com/AurelienBesnier/python-wrapping"
+"Bug Tracker" = "https://github.com/AurelienBesnier/python-wrapping/issues"
+Discussions = "https://github.com/AurelienBesnier/python-wrapping/discussions"
+Changelog = "https://github.com/AurelienBesnier/python-wrapping/releases"
+
+[tool.setuptools]
+ext-modules = [
+  {name = "wrapping.cython_ex.example", sources = ["src/wrapping/cython_ex/example.pyx"]}
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.so", "*.dylib", "*.dll"]
