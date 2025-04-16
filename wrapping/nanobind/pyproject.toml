@@ -17,9 +17,10 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Topic :: Scientific/Engineering",
 ]
+license = "MIT"
 license-files = ["LICEN[CS]E*"]
 version = "0.1.0"
-dependencies = []
+dependencies = ["pytest"]
 
 [project.urls]
 Homepage = "https://github.com/AurelienBesnier/python-wrapping"
