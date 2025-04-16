@@ -11,4 +11,4 @@ Follow installation instructions. Use default installation settings.
 mamba create -n wrapping python boost
 mamba activate wrapping
 ```
-Now you can install the individual projects.
+Now you can install the individual projects with the `install.sh` script.
