@@ -1,4 +1,7 @@
+import pytest
 from wrapping.nanobind import square
 
-def test_square():
-    assert square(2.0) == 4.0
+@pytest.mark.benchmark(warmup=True)
+def test_square(benchmark):
+    result = benchmark(square, 2.0)
+    assert result == 4.0

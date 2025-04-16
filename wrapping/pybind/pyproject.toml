@@ -20,7 +20,7 @@ classifiers = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 version = "0.1.0"
-dependencies = ["pytest"]
+dependencies = ["pytest", "pytest-benchmark"]
 
 [project.urls]
 Homepage = "https://github.com/AurelienBesnier/python-wrapping"
