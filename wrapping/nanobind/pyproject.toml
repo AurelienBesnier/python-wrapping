@@ -1,0 +1,45 @@
+[build-system]
+requires = ["scikit-build-core", "nanobind"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "wrapping.nanobind"
+authors = [
+    {name = "Aurélien Besnier"},
+]
+description = "python wrapping"
+requires-python = ">=3.9"
+keywords = ["c++", "python", "wrapping"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering",
+]
+license-files = ["LICEN[CS]E*"]
+version = "0.1.0"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/AurelienBesnier/python-wrapping"
+"Bug Tracker" = "https://github.com/AurelienBesnier/python-wrapping/issues"
+Discussions = "https://github.com/AurelienBesnier/python-wrapping/discussions"
+Changelog = "https://github.com/AurelienBesnier/python-wrapping/releases"
+
+[tool.setuptools.package-data]
+"*" = ["*.so", "*.dylib", "*.dll"]
+
+[tool.scikit-build]
+build-dir="./build/{wheel_tag}"
+sdist.include = ["*.so", "*.dylib", "*.dll"]
+sdist.exclude = ["*.pyc", "*.pyo"]
+logging.level = "WARNING"
+build.verbose = true
+
+[tool.scikit-build.cmake]
+build-type="Release"
+source-dir="."
+
+[tool.scikit-build.wheel]
+packages = ["src/wrapping"]
