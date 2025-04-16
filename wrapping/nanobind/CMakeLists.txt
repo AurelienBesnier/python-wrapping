@@ -1,19 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
 project(wrapping_nanobind LANGUAGES CXX)
-
-# OpenMP
-if(APPLE)
-    set(CMAKE_CXX_COMPILER clang++)
-    set(CMAKE_CXX_FLAGS "${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY")
-
-    if(CMAKE_CXX_COMPILER_ID MATCHES "Clang\$")
-        set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp")
-        set(OpenMP_CXX_LIB_NAMES "omp")
-        set(OpenMP_omp_LIBRARY omp)
-    endif()
-endif()
-
-# pm(photon_mapping)
 add_subdirectory("src/cpp/")
 add_library(wn INTERFACE src/cpp/ext_nano.cpp)
 
@@ -23,10 +9,6 @@ set_target_properties(wn
         CXX_STANDARD_REQUIRED YES
         CXX_EXTENSIONS YES
         )
-
-
-
-# wrapper
 
 # building lib
 find_package(Python COMPONENTS Interpreter Development REQUIRED)
