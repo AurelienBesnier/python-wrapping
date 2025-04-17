@@ -1,7 +1,9 @@
 try:
-    from .libexample import square
+    from .example import square
 
     __all__ = ["square"]
 
-except:
+except Exception as e:
+    import traceback
+    traceback.print_exception(e)
     print("could not import c++ library")

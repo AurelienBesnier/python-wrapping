@@ -1,5 +1,5 @@
 import pytest
-from wrapping.nanobind import square
+from wrapping.pybind import square
 
 @pytest.mark.benchmark(warmup=True)
 def test_square_pybind(benchmark):

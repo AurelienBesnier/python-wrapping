@@ -12,6 +12,6 @@ set_target_properties(wp
 
 find_package(Python COMPONENTS Interpreter Development REQUIRED)
 # building lib
-install(TARGETS libexample
+install(TARGETS example
         COMPONENT python
         LIBRARY DESTINATION "${CMAKE_SOURCE_DIR}/src/wrapping/pybind/")
