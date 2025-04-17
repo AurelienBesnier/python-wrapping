@@ -8,7 +8,7 @@ Follow installation instructions. Use default installation settings.
 
 ### Create an environment
 ```bash
-mamba create -n wrapping python boost
+mamba create -n wrapping python boost meson
 mamba activate wrapping
 ```
 Now you can install the individual projects with the `install.sh` script.
