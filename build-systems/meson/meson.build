@@ -1,7 +1,7 @@
 project(
   'wrapping.meson',
   'cpp',
-  version: '0.0.1',
+  version: '0.1.0',
 )
 
 py = import('python').find_installation()
