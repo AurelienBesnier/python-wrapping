@@ -5,5 +5,6 @@ try:
 
 except Exception as e:
     import traceback
+
     traceback.print_exception(e)
     print("could not import fortran library")
