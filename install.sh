@@ -12,5 +12,8 @@ echo -e "\033[0;36mInstall wrapping.nanobind...\033[0m"
 cd nanobind; pip install .; cd ..
 echo -e "\033[0;36mDone !\033[0m"
 echo -e "\033[0;36mInstall wrapping.pybind...\033[0m"
-cd pybind; pip install .; cd ../..
+cd pybind; pip install .; cd ../
+echo -e "\033[0;36mDone !\033[0m"
+echo -e "\033[0;36mInstall wrapping.shell...\033[0m"
+cd shell; pip install .; cd ../..
 echo -e "\033[0;36mDone !\033[0m"
