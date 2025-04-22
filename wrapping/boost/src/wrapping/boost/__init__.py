@@ -1,9 +1,9 @@
 import sys
 
 try:
-    from .example import square
+    from .example import square, Vector2
 
-    __all__ = ["square"]
+    __all__ = ["square", "Vector2"]
 
 except Exception as e:
     import traceback
