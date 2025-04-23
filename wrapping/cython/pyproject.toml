@@ -30,7 +30,7 @@ Changelog = "https://github.com/AurelienBesnier/python-wrapping/releases"
 
 [tool.setuptools]
 ext-modules = [
-  {name = "wrapping.cython_ex.example", sources = ["src/wrapping/cython_ex/example.pyx"]}
+  {name = "wrapping.cython_ex.example", sources = ["src/wrapping/cython_ex/example.pyx"], language="c++"}
 ]
 
 [tool.setuptools.packages.find]
