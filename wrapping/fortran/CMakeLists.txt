@@ -20,15 +20,15 @@ set_property(TARGET fortranobject PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 add_custom_command(
   OUTPUT examplemodule.c example-f2pywrappers.f
-  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/fortran/ext_fortran.f
+  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/fortran/ext_fortran2.f90
   VERBATIM
   COMMAND "${Python_EXECUTABLE}" -m numpy.f2py
-          "${CMAKE_CURRENT_SOURCE_DIR}/src/fortran/ext_fortran.f" -m example --lower)
+          "${CMAKE_CURRENT_SOURCE_DIR}/src/fortran/ext_fortran2.f90" -m example --lower)
 
 python_add_library(
   example MODULE "${CMAKE_CURRENT_BINARY_DIR}/examplemodule.c"
   "${CMAKE_CURRENT_BINARY_DIR}/example-f2pywrappers.f"
-  "${CMAKE_CURRENT_SOURCE_DIR}/src/fortran/ext_fortran.f" WITH_SOABI)
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/fortran/ext_fortran2.f90" WITH_SOABI)
 target_link_libraries(example PRIVATE fortranobject)
 
 # install(TARGETS example DESTINATION .)
