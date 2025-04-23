@@ -1,0 +1,7 @@
+name: wrapping
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - boost
+  - meson

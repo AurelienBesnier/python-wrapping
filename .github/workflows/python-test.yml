@@ -1,0 +1,33 @@
+name: Test wrappers
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    name: test-wrapper
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: false
+          activate-environment: wrapping
+          environment-file: conda/environment.yml
+
+      - name: Install check test
+        shell: bash -el {0}
+        run: |
+          conda info
+          conda list
+          conda config --show-sources
+          conda config --show
+          printenv | sort
+          ./install.sh
+          pytest wrapping/
